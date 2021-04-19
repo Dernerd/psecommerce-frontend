@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: PSeCommerce frontend
-Plugin URI: http://corlax.com
-Description: get your PSeCommerce site to frontend support.
-Version: 2.5
-Author: corlax
-Author URI: http://www.corlax.com
+Plugin Name: PSeCommerce Frontend
+Plugin URI: https://n3rds.work
+Description: Erweitert Deine PSeCommerce-Webseite um Frontend-Support.
+Version: 2.5 
+Author: DerN3rd
+Author URI: https://n3rds.work
 License: GPL2
 */
 
@@ -290,7 +290,7 @@ function wpmpf_ajax_login_init()
     wp_localize_script('ajax-login-script', 'ajax_login_object', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
         'redirecturl' => post_permalink(),
-        'loadingmessage' => __('Sending user info, please wait...')
+        'loadingmessage' => __('Benutzerinformationen senden, bitte warten...')
     ));
     
     // Enable the user with no privileges to run ajax_login() in AJAX
@@ -317,12 +317,12 @@ function wpmpf_ajax_login()
     if (is_wp_error($user_signon)) {
         echo json_encode(array(
             'loggedin' => false,
-            'message' => __('Wrong username or password.')
+            'message' => __('Benutzername oder Passwort falsch.')
         ));
     } else {
         echo json_encode(array(
             'loggedin' => true,
-            'message' => __('Login successful, redirecting...')
+            'message' => __('Anmeldung erfolgreich, Weiterleitung...')
         ));
     }
     
